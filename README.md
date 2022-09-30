@@ -7,4 +7,3 @@ Clonar el repo, luego situarse en la carpeta raíz. Y escribir "npm install"
 Termina y pueden abrir la página con "ng serve -o"
 
 
-sssssssssssssssssssssssssssssssssssssss
