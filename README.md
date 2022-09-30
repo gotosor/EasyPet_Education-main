@@ -5,3 +5,6 @@ Tener instalado node la última versión LTS.
 ## Development server
 Clonar el repo, luego situarse en la carpeta raíz. Y escribir "npm install"
 Termina y pueden abrir la página con "ng serve -o"
+
+
+sssssssssssssssssssssssssssssssssssssss
