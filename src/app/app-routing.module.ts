@@ -1,7 +1,9 @@
+import { LoginComponent } from './auth/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MascotasComponent } from './mascotas/mascotas.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
 
 const routes: Routes = [
   {
@@ -11,6 +13,14 @@ const routes: Routes = [
   {
     path: 'mascotas',
     component: MascotasComponent,
+  },
+  {
+    path: 'auth',
+    component: LoginComponent,
+  },
+  {
+    path: 'adminview',
+    component: AdminViewComponent,
   },
 ];
 

@@ -18,10 +18,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-center" href="/">Inicio</a>
+          <a class="nav-link text-center" (click)="inicio()">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-center" href="/mascotas">Mascotas</a>
+          <a class="nav-link text-center" (click)="mascotas()">Mascotas</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-center" href="">Nosotros</a>
@@ -35,19 +35,25 @@
         <li class="nav-item">
           <a class="nav-link text-center" href="">Aprende con nosotros</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-center" href="">Proveedores</a>
+        <li *ngIf="user !== ''" (click)="modify()" class="nav-item">
+          <a class="nav-link text-center">Modificar Data</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-center" href="">Mi veterinaria</a>
         </li>
-        <li class="nav-item">
-          <button class="nav-link mx-auto text-center btn-option">Login</button>
+        <li *ngIf="user === ''" (click)="login()" class="nav-item">
+          <a class="nav-link mx-auto text-center btn-option">Login</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="user === ''" class="nav-item">
           <button class="nav-link mx-auto text-center btn-option">
             Register
           </button>
+        </li>
+        <li class="nav-item text-center" *ngIf="user !== ''">
+          <a class="nav-link mx-auto">Usuario: {{ user }}</a>
+        </li>
+        <li (click)="logout()" class="nav-item text-center" *ngIf="user !== ''">
+          <a class="nav-link mx-auto btn btn-danger">Salir</a>
         </li>
       </ul>
     </div>

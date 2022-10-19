@@ -5,13 +5,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './componentes/header/header.component';
 import { MascotasComponent } from './mascotas/mascotas.component';
-import { FooterComponent } from './componentes/footer/footer.component';
+import { LoginComponent } from './auth/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { HttpClientModule } from '@angular/common/http';
+import { AdminViewModule } from './admin-view/admin-view.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, MascotasComponent],
-  imports: [BrowserModule, AppRoutingModule, ComponentesModule],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    MascotasComponent,
+    LoginComponent,
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ComponentesModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
+    AdminViewModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

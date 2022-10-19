@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -6,41 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  data: any[] = [
-    {
-      ruta: '/assets/loro.png',
-      clase: 'imagenChica',
-      column: 'col-12 col-md-4 p-0',
-      subcol: 'col-12 p-0',
-      texto:
-        'Sabía que los loros son animales sociales y requieren compañía constante?',
-    },
-    {
-      ruta: '/assets/huron.png',
-      clase: 'imagenChica',
-      column: 'col-12 col-md-4 p-0',
-      subcol: 'col-12 p-0',
-      texto:
-        '¿O también que los hurones son carnívoros con un metabolismo muy acelerado?',
-    },
-    {
-      ruta: '/assets/conejo-diente.png',
-      clase: 'imagenChica',
-      column: 'col-12 col-md-4 p-0',
-      subcol: 'col-12 p-0',
-      texto:
-        'Los dientes de los conejos no dejan de crecer. Por ello, se recomienda juguetes especializados.',
-    },
-    {
-      ruta: '/assets/tucan.png',
-      clase: 'imagenGrande',
-      column: 'col-12 p-0',
-      subcol: 'col-md-6 col-12 p-0',
-      texto:
-        '¿Quieres darle una mejor vida a tu mascota? Te ayudaremos con su cuidado',
-    },
-  ];
-  constructor() {}
+  data!: any[];
+  constructor(private inicioSvc: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.inicioSvc.inicio().subscribe((element) => {
+      this.data = element;
+    });
+  }
 }

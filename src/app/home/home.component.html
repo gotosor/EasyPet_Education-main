@@ -1,13 +1,13 @@
-<div class="container-fluid px-3">
+<div class="container-fluid px-3" *ngIf="data !== undefined">
   <div class="banner">
     <img class="imgBanner" src="/assets/banner.png" alt="" />
   </div>
   <div class="row" style="margin-top: 60px">
-    <div *ngFor="let item of data" [class]="item.column">
+    <div *ngFor="let item of data" [class]="item.columna">
       <div class="card">
         <div class="row g-0 m-0 p-0">
           <div [class]="item.subcol">
-            <img [src]="item.ruta" [class]="item.clase" alt="" />
+            <img [src]="item.ruta" [class]="item.claseImagen" alt="" />
           </div>
           <div [class]="item.subcol">
             <div class="card-body flexi">
